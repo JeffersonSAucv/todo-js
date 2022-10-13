@@ -62,7 +62,7 @@ divTodoList.addEventListener('click',(event)=>{
 
 btnBorrar.addEventListener('click',()=>{
   todoList.eliminarCompletados();
-  for (const i = divTodoList.children.length -1 ; i >=0 ; i--) {
+  for (let i = divTodoList.children.length -1 ; i >=0 ; i--) {
     const elemento = divTodoList.children[i];
     if (elemento.classList.contains('completed')) {
       divTodoList.removeChild(elemento);         
@@ -79,7 +79,7 @@ ulFiltros.addEventListener('click',(event)=>{
   anchorFiltros.forEach(elem => elem.classList.remove('selected'))
   event.target.classList.add('selected');
 
-  for (const elemento of divTodoList.children) {
+  for (let elemento of divTodoList.children) {
     elemento.classList.remove('hidden');
     const completado = elemento.classList.contains('completed');
 
